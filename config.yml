@@ -1,0 +1,18 @@
+CUSTOM_WELCOME_MESSAGE: "The place for all your online learning"
+CUSTOM_PRIMARY_COLOR: "#3b85ff" # cool blue
+
+# Footer links are dictionaries with a "title" and "url"
+# To remove all links, write:
+# INDIGO_FOOTER_NAV_LINKS: []
+# INDIGO_FOOTER_LEGAL_LINKS: []
+CUSTOM_FOOTER_NAV_LINKS:
+  - title: "About"
+    url: "/about"
+  - title: "Contact"
+    url: "/contact"
+CUSTOM_FOOTER_LEGAL_LINKS:
+    - title: "Terms of service"
+      url: "/tos"
+    - title: "Indigo theme for Open edX"
+      url: "https://github.com/overhangio/indigo
+      "
