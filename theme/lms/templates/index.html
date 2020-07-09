@@ -1,17 +1,7 @@
-<%page expression_filter="h"/>
-<%!
-  from django.urls import reverse
-  from django.utils.translation import ugettext as _
-  from branding.api import get_footer
-  from openedx.core.djangoapps.lang_pref.api import footer_language_selector_is_enabled
-%>
-<% footer = get_footer(is_secure=is_secure) %>
-<% icp_license_info = getattr(settings, 'ICP_LICENSE_INFO', {})%>
-<%namespace name='static' file='static_content.html'/>
-
 <!DOCTYPE html>
 <html lang="en">
 
+<!-- Mirrored from azim.commonsupport.com/Losalamos/index-3.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Jul 2020 15:56:41 GMT -->
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -19,11 +9,26 @@
 
 <title>Losalamos - HTML 5 Template Preview</title>
 
-% if footer_css_urls:
-	  % for url in footer_css_urls:
-	    <link rel="stylesheet" type="text/css" href="${url}"></link>
-	% endfor
-% endif
+<!-- Fav Icon -->
+<link rel="icon" href="../static/assets/images/favicon.ico" type="image/x-icon">
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css?family=Titillium+Web:300,300i,400,400i,600,600i,700,700i,900&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&amp;display=swap" rel="stylesheet">
+
+<!-- Stylesheets -->
+<link href="../static/assets/css/font-awesome-all.css" rel="stylesheet">
+<link href="../static/assets/css/flaticon.css" rel="stylesheet">
+<link href="../static/assets/css/owl.css" rel="stylesheet">
+<link href="../static/assets/css/bootstrap.css" rel="stylesheet">
+<link href="../static/assets/css/jquery.fancybox.min.css" rel="stylesheet">
+<link href="../static/assets/css/animate.css" rel="stylesheet">
+<link href="../static/assets/css/color/theme-color.css" id="jssDefault" rel="stylesheet">
+<link href="../static/assets/css/switcher-style.css" rel="stylesheet">
+<link href="../static/assets/css/style.css" rel="stylesheet">
+<link href="../static/assets/css/responsive.css" rel="stylesheet">
+
+<%include file="static/assets/css/responsive.css"/>
 
 </head>
 
@@ -1136,12 +1141,24 @@
 </button>
 
 
-% if footer_js_url:
- % for url in footer_js_url:
-  <script type="text/javascript" src="${url}"></script>
-  % endfor
-% endif
+<!-- jequery plugins -->
+<script src="../static/assets/js/jquery.js"></script>
+<script src="../static/assets/js/popper.min.js"></script>
+<script src="../static/assets/js/bootstrap.min.js"></script>
+<script src="../static/assets/js/owl.js"></script>
+<script src="../static/assets/js/wow.js"></script>
+<script src="../static/assets/js/validation.js"></script>
+<script src="../static/assets/js/jquery.fancybox.js"></script>
+<script src="../static/assets/js/appear.js"></script>
+<script src="../static/assets/js/jquery.countTo.js"></script>
+<script src="../static/assets/js/scrollbar.js"></script>
+<script src="../static/assets/js/tilt.jquery.js"></script>
+<script src="../static/assets/js/jQuery.style.switcher.min.js"></script>
+
+<!-- main-js -->
+<script src="../static/assets/js/script.js"></script>
 
 </body><!-- End of .page_wrapper -->
 
+<!-- Mirrored from azim.commonsupport.com/Losalamos/index-3.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Jul 2020 15:57:05 GMT -->
 </html>
