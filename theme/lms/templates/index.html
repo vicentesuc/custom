@@ -1,3 +1,14 @@
+<%page expression_filter="h"/>
+<%!
+  from django.urls import reverse
+  from django.utils.translation import ugettext as _
+  from branding.api import get_footer
+  from openedx.core.djangoapps.lang_pref.api import footer_language_selector_is_enabled
+%>
+<% footer = get_footer(is_secure=is_secure) %>
+<% icp_license_info = getattr(settings, 'ICP_LICENSE_INFO', {})%>
+<%namespace name='static' file='static_content.html'/>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,16 +19,11 @@
 
 <title>Losalamos - HTML 5 Template Preview</title>
 
-<link href="../static/assets/css/font-awesome-all.css" rel="stylesheet">
-<link href="../static/assets/css/flaticon.css" rel="stylesheet">
-<link href="../static/assets/css/owl.css" rel="stylesheet">
-<link href="../static/assets/css/bootstrap.css" rel="stylesheet">
-<link href="../static/assets/css/jquery.fancybox.min.css" rel="stylesheet">
-<link href="../static/assets/css/animate.css" rel="stylesheet">
-<link href="../static/assets/css/color/theme-color.css" id="jssDefault" rel="stylesheet">
-<link href="../static/assets/css/switcher-style.css" rel="stylesheet">
-<link href="../static/assets/css/style.css" rel="stylesheet">
-<link href="../static/assets/css/responsive.css" rel="stylesheet">
+% if footer_css_urls:
+	  % for url in footer_css_urls:
+	    <link rel="stylesheet" type="text/css" href="${url}"></link>
+	% endfor
+% endif
 
 </head>
 
@@ -1130,18 +1136,11 @@
 </button>
 
 
-<script src="../static/assets/js/jquery.js"></script>
-<script src="../static/assets/js/popper.min.js"></script>
-<script src="../static/assets/js/bootstrap.min.js"></script>
-<script src="../static/assets/js/owl.js"></script>
-<script src="../static/assets/js/wow.js"></script>
-<script src="../static/assets/js/validation.js"></script>
-<script src="../static/assets/js/jquery.fancybox.js"></script>
-<script src="../static/assets/js/appear.js"></script>
-<script src="../static/assets/js/jquery.countTo.js"></script>
-<script src="../static/assets/js/scrollbar.js"></script>
-<script src="../static/assets/js/tilt.jquery.js"></script>
-<script src="../static/assets/js/jQuery.style.switcher.min.js"></script>
+% if footer_js_url:
+ % for url in footer_js_url:
+  <script type="text/javascript" src="${url}"></script>
+  % endfor
+% endif
 
 </body><!-- End of .page_wrapper -->
 
